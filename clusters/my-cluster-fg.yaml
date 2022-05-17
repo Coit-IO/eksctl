@@ -1,0 +1,20 @@
+kind: ClusterConfig
+apiVersion: eksctl.io/v1alpha5
+
+metadata:
+  name: auto-cluster
+  region: ap-south-1
+  version: "1.21"
+
+nodeGroups:
+  - name: high-mem
+    instanceType: t2.small
+    minSize: 3
+    maxSize: 8
+    desiredCapacity: 3
+
+fargateProfiles:
+  - name: fg-profile
+    selectors:
+      - namespace: default
+      - namespace: kube-system
