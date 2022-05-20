@@ -7,6 +7,5 @@
                 "sts:AssumeRole"
             ],
             "Resource": "arn:aws:iam::336808412643:role/eksAdminRole"
-        }
     ]
 }
